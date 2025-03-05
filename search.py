@@ -28,6 +28,10 @@ class moviesResearcher:
         elements = self.driver.find_elements(By.CSS_SELECTOR, '.text-white.no-underline')
         for title in elements:
             print(title.text)
+            horarios = self.driver.find_elements(By.CSS_SELECTOR, '.mt-4.flex.flex-wrap.gap-2')
+
+            for time in horarios:
+                print(time.text)
 
 
 teste = moviesResearcher()
