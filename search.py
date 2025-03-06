@@ -26,34 +26,34 @@ class moviesResearcher:
 
     def capture_movies(self):
 
-        #Pega os blocos de filmes, ou seja raspa os dados dentro deste pai
         movie_blocks = self.driver.find_elements(By.CSS_SELECTOR, ".relative.my-5.scroll-mt-\\[250px\\].overflow-hidden.rounded-\\[10px\\].bg-ing-neutral-600.p-4")
-        #Criação de lista que ira guaardar os filmes 
         movies_list = []
 
-        #Para cada filme dentro do bloco de filmes
         for block in movie_blocks:
             try:
-                #Pega o titulo do atual bloco de filme
                 title_movie = block.find_element(By.CSS_SELECTOR, '.text-white.no-underline')
                 title = title_movie.text.strip()
 
-                # schedules_movie = block.find_elements(By.CSS_SELECTOR, '.mt-4.flex.flex-wrap.gap-2')
-                # schedule = [time.text.strip() for time in schedules_movie]
+                schedules_movie = block.find_elements(By.CSS_SELECTOR, '.mt-4.flex.flex-wrap.gap-2')
+                schedule = []
+                for time in schedules_movie:
+                    schedule.append(time.text.strip())
                 
-                # movie_map = {
-                #     "title": title,
-                #     # "schedule": schedule
-                # }
-                #Adiciona o titulo do filme na lista de filmes
-                movies_list.append(title)                
+                movie_map = {
+                    "title": title,
+                    "schedule": schedule
+                }
+                movies_list.append(movie_map)
+
             except Exception as e:
                 print(f"Erro ao capturar filme: {e}")
         
-        #Printa todos os titulos de filmes contidos no site
         for movie in movies_list:
-            print(f"🎬 Filme: {movie}")
-            # print(f"⏰ Horários: {', '.join(movie['times']) if movie['times'] else 'Nenhum horário disponível'}")
+            print(f"🎬 Filme: {movie['title']}")
+            if movie['schedule']:
+                print(f"⏰ Horários: {', '.join(movie['schedule'])}")
+            else:
+                print("Nenhum horário disponível")
             print("-" * 50)
 
 
