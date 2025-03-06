@@ -3,6 +3,12 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 import time 
 
+links = ["https://www.ingresso.com/cinema/cinemark-bh-shopping?city=belo-horizonte","https://www.ingresso.com/cinema/cineart-boulevard?city=belo-horizonte" \
+         ,"https://www.ingresso.com/cinema/cineart-minas-shopping?city=belo-horizonte","https://www.ingresso.com/cinema/cineart-del-rey?city=belo-horizonte",\
+            "https://www.ingresso.com/cinema/cinemark-diamond-mall?city=belo-horizonte","https://www.ingresso.com/cinema/cinepolis-estacao-bh?city=belo-horizonte",\
+                "https://www.ingresso.com/cinema/cinemark-patio-savassi?city=belo-horizonte"]
+
+
 class moviesResearcher:
 
     def __init__(self):
