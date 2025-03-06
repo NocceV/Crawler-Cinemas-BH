@@ -11,8 +11,8 @@ links = ["https://www.ingresso.com/cinema/cinemark-bh-shopping?city=belo-horizon
 
 class moviesResearcher:
 
-    def __init__(self):
-        self.SITE_LINK = "https://www.ingresso.com/cinema/cinemark-bh-shopping?city=belo-horizonte"
+    def __init__(self,link):
+        self.SITE_LINK = link
         self.SITE_MAP = {
             "movies":{
                 "movie":{
@@ -28,7 +28,11 @@ class moviesResearcher:
     def open_site(self):
         time.sleep(2)
         self.driver.get(self.SITE_LINK)
-        time.sleep(10)
+        time.sleep(4)
+
+    def get_siteName(self):
+        site_name = self.driver.find_element(By.CSS_SELECTOR, '.line-clamp-3.align-middle.text-lg.leading-none.lg\\:text-2xl')
+        return site_name.text
 
     def capture_movies(self):
 
@@ -56,7 +60,7 @@ class moviesResearcher:
         
         return movies_list
 
-    def write_movies(movies_list):
+    def write_movies(self,movies_list):
         for movie in movies_list:
             print(f"🎬 Filme: {movie['title']}")
             if movie['schedule']:
@@ -65,7 +69,17 @@ class moviesResearcher:
                 print("Nenhum horário disponível")
             print("-" * 50)
 
-teste = moviesResearcher()
-teste.open_site()
-movies_list = teste.capture_movies()
-teste.write_movies(movies_list)
+    def close(self):
+        self.driver.quit()
+
+
+def iniciar():
+    for link in links:
+        core = moviesResearcher(link)
+        core.open_site()
+        print(core.get_siteName())
+        movies_list = core.capture_movies()
+        core.write_movies(movies_list)
+        core.close()
+
+iniciar()
