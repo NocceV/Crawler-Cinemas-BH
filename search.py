@@ -48,6 +48,9 @@ class moviesResearcher:
             except Exception as e:
                 print(f"Erro ao capturar filme: {e}")
         
+        return movies_list
+
+    def write_movies(movies_list):
         for movie in movies_list:
             print(f"🎬 Filme: {movie['title']}")
             if movie['schedule']:
@@ -56,7 +59,7 @@ class moviesResearcher:
                 print("Nenhum horário disponível")
             print("-" * 50)
 
-
 teste = moviesResearcher()
 teste.open_site()
-teste.capture_movies()
+movies_list = teste.capture_movies()
+teste.write_movies(movies_list)
