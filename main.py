@@ -1,1 +1,3 @@
-from fasthtml.common import fast_app
+from fasthtml.common import fast_app, serve
+
+
