@@ -81,5 +81,3 @@ def iniciar():
         movies_list = core.capture_movies()
         core.write_movies(movies_list)
         core.close()
-
-iniciar()
