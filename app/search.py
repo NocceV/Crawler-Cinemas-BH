@@ -31,7 +31,7 @@ class moviesResearcher:
         time.sleep(4)
 
     def get_siteName(self):
-        site_name = self.driver.find_element(By.CSS_SELECTOR, '.line-clamp-3.align-middle.text-lg.leading-none.lg\\:text-2xl')
+        site_name = self.driver.find_element(By.CSS_SELECTOR, '.relative.my-5.scroll-mt-\[250px\].overflow-hidden.rounded-\[10px\].bg-ing-neutral-600.p-4') # .line-clamp-3.align-middle.text-lg.leading-none.lg\\:text-2xl
         return site_name.text
 
     def capture_movies(self):
@@ -81,3 +81,6 @@ def iniciar():
         movies_list = core.capture_movies()
         core.write_movies(movies_list)
         core.close()
+
+
+iniciar()
