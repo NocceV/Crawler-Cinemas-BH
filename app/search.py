@@ -83,4 +83,4 @@ def iniciar():
         core.close()
 
 
-iniciar()
+#iniciar()
