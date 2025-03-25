@@ -6,7 +6,7 @@ def gerar_titulo(titulo, subtitulo, movies_list):
         P(subtitulo, style={"textAlign": "center"}), 
         Ul(
             *[
-                Li(f"🎬 {movie['title']} - ⏰ {', '.join(movie['schedule'])} 📍 {movie['cinema']}")
+                Li(f"🎬 {movie['title']} - ⏰ {'- '.join(movie['schedule'])} 📍 {movie['cinema']}")
                 for movie in movies_list
             ], 
             style={"textAlign": "center", "listStyleType": "none"}
