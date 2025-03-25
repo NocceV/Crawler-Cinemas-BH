@@ -75,15 +75,23 @@ class moviesResearcher:
 
 def iniciar():
     all_movies = []
+    all_cinema_names = []
+    
     for link in links:
         core = moviesResearcher(link)
         core.open_site()
-        print(core.get_siteName())
+        cinema_name = core.get_siteName()
+        all_cinema_names.append(cinema_name)  # Agora armazena corretamente o nome do cinema
         movies_list = core.capture_movies()
+        
+        # Associa os filmes ao cinema correspondente
+        for movie in movies_list:
+            movie["cinema"] = cinema_name  # Adiciona a informação do cinema a cada filme
+        
         all_movies.extend(movies_list)  # Adiciona à lista final
         core.close()
     
-    return all_movies 
+    return all_movies
 
 
 #iniciar()
