@@ -28,7 +28,7 @@ class moviesResearcher:
     def open_site(self):
         time.sleep(2)
         self.driver.get(self.SITE_LINK)
-        time.sleep(4)
+        time.sleep(2)
 
     def get_siteName(self):
         site_name = self.driver.find_element(By.CSS_SELECTOR, '.line-clamp-3.align-middle.text-lg.leading-none.lg\\:text-2xl')
@@ -74,14 +74,16 @@ class moviesResearcher:
 
 
 def iniciar():
+    all_movies = []
     for link in links:
         core = moviesResearcher(link)
         core.open_site()
         print(core.get_siteName())
         movies_list = core.capture_movies()
-        core.write_movies(movies_list)
+        all_movies.extend(movies_list)  # Adiciona à lista final
         core.close()
-        return movies_list
+    
+    return all_movies 
 
 
 #iniciar()
