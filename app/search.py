@@ -8,7 +8,6 @@ links = ["https://www.ingresso.com/cinema/cinemark-bh-shopping?city=belo-horizon
             "https://www.ingresso.com/cinema/cinemark-diamond-mall?city=belo-horizonte","https://www.ingresso.com/cinema/cinepolis-estacao-bh?city=belo-horizonte",\
                 "https://www.ingresso.com/cinema/cinemark-patio-savassi?city=belo-horizonte"]
 
-
 class moviesResearcher:
 
     def __init__(self,link):
@@ -72,7 +71,6 @@ class moviesResearcher:
     def close(self):
         self.driver.quit()
 
-
 def iniciar():
     all_movies = []
     all_cinema_names = []
@@ -81,17 +79,14 @@ def iniciar():
         core = moviesResearcher(link)
         core.open_site()
         cinema_name = core.get_siteName()
-        all_cinema_names.append(cinema_name)  # Agora armazena corretamente o nome do cinema
+        all_cinema_names.append(cinema_name)  
         movies_list = core.capture_movies()
         
-        # Associa os filmes ao cinema correspondente
+       
         for movie in movies_list:
-            movie["cinema"] = cinema_name  # Adiciona a informação do cinema a cada filme
+            movie["cinema"] = cinema_name 
         
-        all_movies.extend(movies_list)  # Adiciona à lista final
+        all_movies.extend(movies_list)  
         core.close()
     
     return all_movies
-
-
-#iniciar()

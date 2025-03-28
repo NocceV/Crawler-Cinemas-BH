@@ -15,7 +15,7 @@ def gerar_titulo(titulo, subtitulo, movies_list):
         Ul(
             *[
                 Li(
-                    Strong(f"📍 {cinema}"),  # Nome do cinema aparece uma vez
+                    Strong(f"📍 {cinema}"), 
                     Ul(
                         *[
                             Li(f"🎬 {movie['title']} - ⏰ {', '.join(movie['schedule'])},")
