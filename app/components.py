@@ -1,6 +1,6 @@
 from fasthtml.common import Div, H1, P, A, Ul, Li, Strong
 
-def gerar_titulo(titulo, subtitulo, movies_list):
+def generate_title(titulo, subtitulo, movies_list):
     # Agrupar filmes por cinema
     cinema_dict = {}
     for movie in movies_list:

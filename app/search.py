@@ -11,6 +11,10 @@ links = ["https://www.ingresso.com/cinema/cinemark-bh-shopping?city=belo-horizon
 class moviesResearcher:
 
     def __init__(self,link):
+        """
+        Initialize the movie searcher class, containing the site link
+        and the site dictionary map containing xpath, initializing the selenium getter
+        """
         self.SITE_LINK = link
         self.SITE_MAP = {
             "movies":{
@@ -25,6 +29,9 @@ class moviesResearcher:
         self.driver.maximize_window()
     
     def open_site(self):
+        """
+        Open the actual link
+        """
         time.sleep(2)
         self.driver.get(self.SITE_LINK)
         time.sleep(2)
@@ -71,7 +78,7 @@ class moviesResearcher:
     def close(self):
         self.driver.quit()
 
-def iniciar():
+def start():
     all_movies = []
     all_cinema_names = []
     
