@@ -37,11 +37,16 @@ class moviesResearcher:
         time.sleep(2)
 
     def get_siteName(self):
+        """
+        Get and return the site/cinema name
+        """
         site_name = self.driver.find_element(By.CSS_SELECTOR, '.line-clamp-3.align-middle.text-lg.leading-none.lg\\:text-2xl')
         return site_name.text
 
     def capture_movies(self):
-
+        """
+        Get all movies status like schedule and type
+        """
         movie_blocks = self.driver.find_elements(By.CSS_SELECTOR, ".relative.my-5.scroll-mt-\\[250px\\].overflow-hidden.rounded-\\[10px\\].bg-ing-neutral-600.p-4")
         movies_list = []
 
@@ -67,6 +72,9 @@ class moviesResearcher:
         return movies_list
 
     def write_movies(self,movies_list):
+        """
+        Write all movies statistics
+        """
         for movie in movies_list:
             print(f"🎬 Filme: {movie['title']}")
             if movie['schedule']:
@@ -76,9 +84,15 @@ class moviesResearcher:
             print("-" * 50)
 
     def close(self):
+        """
+        CLose the window
+        """
         self.driver.quit()
 
 def start():
+    """
+    Start the searching process
+    """
     all_movies = []
     all_cinema_names = []
     
