@@ -44,7 +44,7 @@ Lista de condições assumidas para o desenvolvimento do projeto:
   ![Esboço da Arquitetura](./images/site-architecture.png)
 
 - **Versão Final da Arquitetura**
-  ![Versão Final]()
+  ![Versão Final](./images/site-final-architecture.png)
 
 
 ### **Back-end**:
