@@ -29,9 +29,9 @@ A seguir, as instruções para executar o sistema:
 Lista de condições assumidas para o desenvolvimento do projeto:
 
 - **Usuário:** O usuário final será Vitor e amigos.
-- **Objetivos do usuário:** Encontrar todos os filmes e seus respectivos horários e mexibição no dia atual
+- **Objetivos do usuário:** Encontrar todos os filmes e seus respectivos horários e mexibição no dia atual.
 - **Tecnologia de Acesso:** Navegador Web.
-- **Dados:** Cinemas, filmes e horários
+- **Dados:** Cinemas, filmes e horários.
 - **Cronograma:** 3 semanas de planejamento e desenvolvimento.
 
 ## 🤖 Decisões de projeto
