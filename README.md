@@ -22,7 +22,7 @@ A seguir, as instruções para executar o sistema:
 7. Após a criação do venv, ative o mesmo com o comando `.\venv\Scripts\Activate.ps1`
 8. Dê o comando `cd app` para entrar na pasta da aplicação.
 9. Com o venv ativado intale as dependencias com `pip install requirements.txt`.
-10. Após a instalação execute o programa com o comando `python main.py` e aguarde o resultado que será exibido no local host: `http://localhost:5001`
+10. Após a instalação execute o programa com o comando `python main.py` e aguarde o resultado que será exibido no local host: `http://localhost:5001`.
 
 ## 📒 Premissas assumidas
 
